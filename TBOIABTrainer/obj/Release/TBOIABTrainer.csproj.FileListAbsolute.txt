@@ -1,0 +1,14 @@
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\bin\Release\TBOIABTrainer.exe.config
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\bin\Release\TBOIABTrainer.exe
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\bin\Release\TBOIABTrainer.pdb
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\bin\Release\Memory.dll
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\bin\Release\Memory.xml
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.csproj.AssemblyReference.cache
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.csproj.SuggestedBindingRedirects.cache
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.Form1.resources
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.Properties.Resources.resources
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.csproj.GenerateResource.cache
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.csproj.CoreCompileInputs.cache
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.csproj.CopyComplete
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.exe
+C:\Users\adria\source\repos\TBOIABTrainer\TBOIABTrainer\obj\Release\TBOIABTrainer.pdb
