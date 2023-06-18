@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>azael210.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Memory, Version=1.2.24.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\Memory.dll.x86.1.2.24\lib\netstandard2.0\Memory.dll</HintPath>
@@ -86,6 +89,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="azael-removebg-preview.ico" />
+    <Content Include="azael210.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

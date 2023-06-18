@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,31 @@ namespace TBOIABTrainer
 {
     public partial class Form1 : Form
     {
+        public void disableAll()
+        {
+            checkBox1.Enabled = false;
+            checkBox2.Enabled = false;
+            checkBox3.Enabled = false;
+            checkBox4.Enabled = false;
+            checkBox5.Enabled = false;
+            checkBox6.Enabled = false;
+            checkBox7.Enabled = false;
+            comboBox1.Enabled = false;
+            comboBox2.Enabled = false;
+        }
+        public void enableAll()
+        {
+            checkBox1.Enabled = true;
+            checkBox2.Enabled = true;
+            checkBox3.Enabled = true;
+            checkBox4.Enabled = true;
+            checkBox5.Enabled = true;
+            checkBox6.Enabled = true;
+            checkBox7.Enabled = true;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+        }
+
         Mem m = new Mem();
 
         // "zhlRemix2.dll"+0027CF60 + B54
@@ -37,23 +63,27 @@ namespace TBOIABTrainer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int PID = m.GetProcIdFromName("isaac-ng.exe");
-            if (PID > 0)
-            {
-                m.OpenProcess(PID);
-                timer1.Start();
-            }
-            else
-            {
-                MessageBox.Show("TBOI Antibirth is not started!", "Antibirth Trainer",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                Application.Exit();
-            }
+            disableAll();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (status.ForeColor == Color.Lime)
+            {
+                int PID = m.GetProcIdFromName("isaac-ng.exe");
+                if (PID > 0)
+                {
+                    status.ForeColor = Color.Lime;
+                    status.Text = "Status: Injected!";
+                }
+                else
+                {
+                    status.ForeColor = Color.Red;
+                    status.Text = "Status: Not injected!";
+                    timer1.Stop();
+                    disableAll();
+                }
+            }
             if (checkBox1.Checked)
             {
                 m.WriteMemory(healthAddress, "int", "100");
@@ -176,6 +206,55 @@ namespace TBOIABTrainer
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int PID = m.GetProcIdFromName("isaac-ng.exe");
+            if (PID > 0)
+            {
+                m.OpenProcess(PID);
+                timer1.Start();
+                status.ForeColor = Color.Lime;
+                status.Text = "Status: Injected!";
+                enableAll();
+            }
+            else
+            {
+                MessageBox.Show("TBOI Antibirth is not started!", "Antibirth Trainer",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (status.ForeColor == Color.Lime)
+            {
+                int PID = m.GetProcIdFromName("isaac-ng.exe");
+                if (PID > 0)
+                {
+                    //m.CloseProcess();
+                    timer1.Stop();
+                    status.ForeColor = Color.Red;
+                    status.Text = "Status: Not injected!";
+                }
+                else
+                {
+                    status.ForeColor = Color.Red;
+                    status.Text = "Status: Not injected!";
+                    MessageBox.Show("TBOI Antibirth is not started!", "Antibirth Trainer",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                disableAll();
+            }
+            else
+            {
+                MessageBox.Show("TBOI Antibirth is not injected!", "Antibirth Trainer",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
     }
